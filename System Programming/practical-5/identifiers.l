@@ -33,7 +33,7 @@ IDENTIFIERS [a-zA-Z_][a-zA-Z_0-9]*
 int main() {
     yyin = fopen("identifiers.cpp", "r");
     yylex();
-    printf("\nint Number of identifiers = %d \n", identifiers);
+    printf("\nNumber of identifiers = %d \n", identifiers);
     return 0;
 }
 int yywrap() {

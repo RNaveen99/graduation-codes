@@ -1,4 +1,4 @@
-/* Cipher decipher */
+/* Caesar cipher */
 %{
     void display(int);
 %}

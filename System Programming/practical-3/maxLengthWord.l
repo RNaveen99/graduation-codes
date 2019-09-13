@@ -1,7 +1,5 @@
 /* To identify the max length word */
 %{
-    #include<stdio.h>
-    #include<stdlib.h>
     #include<string.h>
     int max = 0;
     int temp = 0;
@@ -13,15 +11,16 @@
     temp = yyleng;
     if (temp > max) {
         max = temp;
-        s = (char*)malloc(yyleng);
+        s = (char*)realloc(s, yyleng);
         strcpy(s, yytext);
     }
 }
-[\n] {
+\n {
     printf("max length word = %s \n", s);
     temp = max = 0;
+    s = 0;
 }
-
+[ ] ;
 
 %%
 

@@ -284,28 +284,27 @@ static void yy_fatal_error YY_PROTO(( yyconst char msg[] ));
 
 #define YY_NUM_RULES 4
 #define YY_END_OF_BUFFER 5
-static yyconst short int yy_accept[17] =
+static yyconst short int yy_accept[10] =
     {   0,
-        1,    1,    5,    4,    1,    2,    3,    1,    1,    2,
-        3,    1,    2,    3,    1,    0
+        0,    0,    5,    4,    2,    3,    1,    1,    0
     } ;
 
 static yyconst int yy_ec[256] =
     {   0,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    2,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    3,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    2,    3,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    3,    1,    4,    4,    4,
-        4,    4,    4,    4,    4,    4,    4,    1,    1,    1,
-        1,    1,    3,    1,    5,    5,    5,    5,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    4,    4,    4,    4,    4,    4,
+        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
+        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
+        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
 
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
-        5,    5,    1,    1,    1,    1,    1,    1,    1,    1,
+        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
+        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
+        4,    4,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -322,35 +321,31 @@ static yyconst int yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static yyconst int yy_meta[6] =
+static yyconst int yy_meta[5] =
     {   0,
-        1,    2,    1,    1,    1
+        1,    1,    1,    2
     } ;
 
-static yyconst short int yy_base[20] =
+static yyconst short int yy_base[11] =
     {   0,
-        0,    0,   17,   18,    4,    0,    8,   11,    0,    0,
-        0,    0,    0,    0,    0,   18,   13,   12,    9
+        0,    0,    6,    7,    7,    7,    0,    0,    7,    3
     } ;
 
-static yyconst short int yy_def[20] =
+static yyconst short int yy_def[11] =
     {   0,
-       16,    1,   16,   16,   16,   17,   16,   16,    5,   17,
-        7,    8,   17,   18,   19,    0,   16,   16,   16
+        9,    1,    9,    9,    9,    9,   10,   10,    0,    9
     } ;
 
-static yyconst short int yy_nxt[24] =
+static yyconst short int yy_nxt[12] =
     {   0,
-        4,    5,    6,    7,    8,    9,   10,   11,   12,   14,
-       15,   11,   15,   14,   13,   12,   16,    3,   16,   16,
-       16,   16,   16
+        4,    5,    6,    7,    8,    9,    3,    9,    9,    9,
+        9
     } ;
 
-static yyconst short int yy_chk[24] =
+static yyconst short int yy_chk[12] =
     {   0,
-        1,    1,    1,    1,    1,    5,    5,    5,    5,    7,
-       19,    7,    8,   18,   17,    8,    3,   16,   16,   16,
-       16,   16,   16
+        1,    1,    1,    1,   10,    3,    9,    9,    9,    9,
+        9
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -364,13 +359,16 @@ static char *yy_last_accepting_cpos;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "wordsCount.l"
+#line 1 "maxLengthWord.l"
 #define INITIAL 0
-#line 2 "wordsCount.l"
-    int words = 0;
-    int punctuation = 0;
-    int numerics = 0;
-#line 374 "lex.yy.c"
+/* To identify the max length word */
+#line 3 "maxLengthWord.l"
+    
+    #include<string.h>
+    int max = 0;
+    int temp = 0;
+    char *s;
+#line 372 "lex.yy.c"
 
 /* Macros after this point can all be overridden by user definitions in
  * section 1.
@@ -521,9 +519,9 @@ YY_DECL
 	register char *yy_cp, *yy_bp;
 	register int yy_act;
 
-#line 9 "wordsCount.l"
+#line 10 "maxLengthWord.l"
 
-#line 527 "lex.yy.c"
+#line 525 "lex.yy.c"
 
 	if ( yy_init )
 		{
@@ -574,13 +572,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 17 )
+				if ( yy_current_state >= 10 )
 					yy_c = yy_meta[(unsigned int) yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 18 );
+		while ( yy_base[yy_current_state] != 7 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -608,31 +606,33 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 10 "wordsCount.l"
+#line 11 "maxLengthWord.l"
 {
-    printf("Word = %s\n", yytext);
-    words++;
+    temp = yyleng;
+    if (temp > max) {
+        max = temp;
+        s = (char*)realloc(s, yyleng);
+        strcpy(s, yytext);
+    }
 }
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 14 "wordsCount.l"
+#line 19 "maxLengthWord.l"
 {
-    printf("Punctuation = %s\n", yytext);
-    punctuation++;
+    printf("max length word = %s \n", s);
+    temp = max = 0;
+    s = 0;
 }
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 18 "wordsCount.l"
-{
-    printf("Numerics = %s\n", yytext);
-    numerics++;
-}
+#line 24 "maxLengthWord.l"
+;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 22 "wordsCount.l"
+#line 26 "maxLengthWord.l"
 ECHO;
 	YY_BREAK
 #line 639 "lex.yy.c"
@@ -927,7 +927,7 @@ static yy_state_type yy_get_previous_state()
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 17 )
+			if ( yy_current_state >= 10 )
 				yy_c = yy_meta[(unsigned int) yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
@@ -962,11 +962,11 @@ yy_state_type yy_current_state;
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 17 )
+		if ( yy_current_state >= 10 )
 			yy_c = yy_meta[(unsigned int) yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
-	yy_is_jam = (yy_current_state == 16);
+	yy_is_jam = (yy_current_state == 9);
 
 	return yy_is_jam ? 0 : yy_current_state;
 	}
@@ -1521,14 +1521,11 @@ int main()
 	return 0;
 	}
 #endif
-#line 22 "wordsCount.l"
+#line 26 "maxLengthWord.l"
+
 
 int main() {
-    yyin = fopen("wordsCount.txt", "r");
     yylex();
-    printf("No. of words = %d\n", words);
-    printf("No. of words = %d\n", words);
-    printf("No. of numerics = %d\n", numerics);
     return 0;
 }
 int yywrap() {
